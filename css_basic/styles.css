@@ -1,0 +1,38 @@
+/* Make body a flex container stacking header, main, footer vertically */
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Optional: full viewport height */
+  margin: 0;     /* Remove default margin */
+}
+
+/* Make main a flex container laying out article and aside horizontally */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto;    /* Take available space */
+  height: auto;  /* Auto height */
+}
+
+/* Article takes 2/3 width, scrolls vertically if content overflows */
+article {
+  flex: 2;
+  overflow-y: auto;
+  padding: 10px;         /* Optional padding */
+  border: 1px solid #ccc; /* Optional border to visualize */
+}
+
+/* Aside takes 1/3 width, scrolls vertically if content overflows */
+aside {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Optional styling for header and footer */
+header, footer {
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+}
