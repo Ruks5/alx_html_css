@@ -1,14 +1,13 @@
 /* Import Source Sans Pro font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap');
 
-/* Reset default margins and paddings */
+/*default margins and paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styling */
 body {
   font-family: 'Source Sans Pro', Arial, sans-serif;
   line-height: 1.6;
@@ -16,7 +15,6 @@ body {
   background-color: #fff;
 }
 
-/* Links */
 a {
   color: #007BFF;
   text-decoration: none;
@@ -26,13 +24,24 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Headings */
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5em;
-  font-weight: 600; /* semi-bold */
+  font-weight: 600; 
 }
 
 /* Paragraphs */
 p {
   margin-bottom: 1em;
+}
+/* Responsive layout for smartphone */
+@media (max-width: 768px) {
+  .works_on_smartphone main {
+    flex-direction: column;
+  }
+
+  .works_on_smartphone article,
+  .works_on_smartphone aside {
+    flex: unset;
+    width: 100%;
+  }
 }
