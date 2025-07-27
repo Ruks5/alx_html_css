@@ -11,4 +11,4 @@ At the end of the project, you are expected to be able to explain to anyone, **w
 - What is a selector
 - How to compute CSS specificity value
 - What are Box properties in CSS
-- How does the browser load a webpage
+- How does the browser load a webpagegg
