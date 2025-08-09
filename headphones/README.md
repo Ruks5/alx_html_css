@@ -31,4 +31,3 @@ Your objective is to replicate this design as closely as possible using only HTM
 ## 📁 Project Structure (Suggestion)
 
 You are free to structure your files as you see fit, but a common layout might look like this:
-

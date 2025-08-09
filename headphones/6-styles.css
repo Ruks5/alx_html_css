@@ -1,0 +1,473 @@
+/* ========== Font Face ========== */
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spin Cycle OT';
+  src: url('fonts/SpinCycle3dOT.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HolbertonSchoolIcon';
+  src: url('icons/holberton_school-icon.eot');
+  src: url('icons/holberton_school-icon.eot?#iefix') format('embedded-opentype'),
+       url('icons/holberton_school-icon.woff') format('woff'),
+       url('icons/holberton_school-icon.ttf') format('truetype'),
+       url('icons/holberton_school-icon.svg#HolbertonSchoolIcon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========== Reset & Base Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #000; /* fallback background */
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('images/headphones_hero_1.jpg') center/cover no-repeat;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 150px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.logo {
+  margin-left: 150px;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.logo span {
+  font-family: 'Spin Cycle OT';
+  font-size: 1rem;
+  color: white;
+  font-weight: normal;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* ========== Hero Content ========== */
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #ff5e66;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e04e58;
+}
+
+/* ========== What We Do Section ========== */
+.what-we-do {
+  background-color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  font-family: 'Source Sans Pro', sans-serif; /* Ensure regular font is used */
+}
+
+.what-we-do h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.what-we-do p {
+  max-width: 600px;
+  margin: 0 auto 5rem;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.what-we-do-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.what-item {
+  max-width: 250px;
+  text-align: center;
+}
+
+.what-item h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.what-item p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* ========== Icon Styling ========== */
+.icon {
+  font-family: 'HolbertonSchoolIcon';
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-bottom: 0.5em;
+  font-size: 5rem;
+  color: #ff5e66;
+}
+
+/* Optional: Semantic Icon Classes (replace with real mappings) */
+.icon-sound::before {
+  content: '\e90e';
+}
+
+.icon-clapper::before {
+  content: '\e910';
+}
+
+.icon-music::before {
+  content: '\e90d';
+}
+
+.icon-ear::before {
+  content: '\e909';
+}
+/* ========== Responsive Design ========== */
+@media (min-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+  }
+
+  .what-item {
+    max-width: 200px;
+  }
+}
+/* ========== Our Results Section ========== */
+/* --- existing styles kept exactly the same except .result-card --- */
+.our-results {
+  position: relative;
+  z-index: 30;
+  background:
+    linear-gradient(
+      to right,
+      rgba(14,26,43,0.85) 0%,
+      rgba(14,26,43,0.6) 50%,
+      rgba(14,26,43,0.3) 100%
+    ),
+    url('images/headphones_hero_2.jpg') center/cover no-repeat;
+  text-align: center;
+  padding: 6rem 2rem;
+  color: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.results-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.results-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+.results-text {
+  font-family: 'source-sans-pro', sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  color: rgba(255,255,255,0.95);
+}
+
+.results-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 80px;
+  align-items: center;
+}
+
+/* --- Updated: CSS-drawn pentagon --- */
+.result-card {
+  --card-size: 120px;
+  width: var(--card-size);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(
+    50% 0%,
+    95% 35%,
+    77% 90%,
+    23% 90%,
+    5% 35%
+  );
+  background: #ff6b6b; /* solid pink pentagon */
+  border: none;
+  font-family: 'Spin Cycle OT', sans-serif;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* hover effect */
+.result-card:hover {
+  background: #e85b5b; /* slightly darker pink on hover */
+  transform: scale(1.05);
+}
+
+.result-number,
+.result-label {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  pointer-events: none;
+}
+
+.result-number {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(0.20 * var(--card-size));
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+.result-label {
+  top: 68%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: calc(0.06 * var(--card-size));
+  line-height: 1.2;
+  max-width: 78%;
+  font-family: 'Source Sans Pro', sans-serif;
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .our-results {
+    padding: 3.5rem 1rem;
+  }
+  .results-text {
+    margin-bottom: 2rem;
+  }
+  .result-card {
+    --card-size: clamp(64px, 14vw, 110px);
+  }
+  .result-number {
+    top: 38%;
+  }
+  .result-label {
+    top: 67%;
+    font-size: calc(0.13 * var(--card-size));
+  }
+}
+
+/* ========== Contact Section ========== */
+/* Contact Section */
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fff;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  width: min(400px, 90%);
+  text-align: center;
+}
+
+/* Heading */
+.contact-form h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Inputs & Textarea */
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 0.8rem 0;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+  resize: none;
+  transition: all 0.3s ease;
+}
+
+/* Focus effect */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-bottom: 1px solid #ff6666;
+  transform: translateY(-2px);
+}
+
+/* Button */
+.contact-form button {
+  background: #ff6666;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  align-self: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.contact-form button:hover {
+  background: #ff4d4d;
+  transform: scale(1.05);
+}
+/* ========== Footer ========== */
+.footer {
+  background-color: #06182c; /* dark navy */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6rem;
+  padding: 4rem 8rem;
+  
+}
+
+.footer-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.footer-logo {
+  height: 35px;
+}
+
+.footer-center {
+  font-size: 0.7rem;
+  color: #657380;
+}
+
+.footer-right {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-right a {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  color: black;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.footer-right a:hover {
+  background: #ff4d4d;
+  color: white;
+}

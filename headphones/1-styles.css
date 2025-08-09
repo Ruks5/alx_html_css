@@ -1,0 +1,221 @@
+/* ========== Font Face ========== */
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url('fonts/SourceSansPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Spin Cycle OT';
+  src: url('fonts/SpinCycle3dOT.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HolbertonSchoolIcon';
+  src: url('icons/holberton_school-icon.eot');
+  src: url('icons/holberton_school-icon.eot?#iefix') format('embedded-opentype'),
+       url('icons/holberton_school-icon.woff') format('woff'),
+       url('icons/holberton_school-icon.ttf') format('truetype'),
+       url('icons/holberton_school-icon.svg#HolbertonSchoolIcon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ========== Reset & Base Styles ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #000; /* fallback background */
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('images/headphones_hero_1.jpg') center/cover no-repeat;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 150px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.logo {
+  margin-left: 150px;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.logo span {
+  font-family: 'Spin Cycle OT';
+  font-size: 1rem;
+  color: white;
+  font-weight: normal;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* ========== Hero Content ========== */
+.hero-content {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background-color: #ff5e66;
+  color: white;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e04e58;
+}
+
+/* ========== What We Do Section ========== */
+.what-we-do {
+  background-color: white;
+  text-align: center;
+  padding: 4rem 2rem;
+  font-family: 'Source Sans Pro', sans-serif; /* Ensure regular font is used */
+}
+
+.what-we-do h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #000;
+}
+
+.what-we-do p {
+  max-width: 600px;
+  margin: 0 auto 5rem;
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.what-we-do-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.what-item {
+  max-width: 250px;
+  text-align: center;
+}
+
+.what-item h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.what-item p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* ========== Icon Styling ========== */
+.icon {
+  font-family: 'HolbertonSchoolIcon';
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-bottom: 0.5em;
+  font-size: 5rem;
+  color: #ff5e66;
+}
+
+/* Optional: Semantic Icon Classes (replace with real mappings) */
+.icon-sound::before {
+  content: '\e90e';
+}
+
+.icon-clapper::before {
+  content: '\e910';
+}
+
+.icon-music::before {
+  content: '\e90d';
+}
+
+.icon-ear::before {
+  content: '\e909';
+}
+
+/* ========== Responsive Design ========== */
+@media (min-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 1rem 2.5rem;
+  }
+
+  .what-item {
+    max-width: 200px;
+  }
+}
