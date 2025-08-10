@@ -41,7 +41,7 @@ body, html {
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
               url('images/headphones_hero_1.jpg') center/cover no-repeat;
-  height: 100vh;
+  min-height: 100vh; /* CHANGED: from height to min-height for better mobile handling */
   color: white;
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@ body, html {
 }
 
 .hero-content h1 {
-  font-size: 2rem; /* readuce from your current value */
+  font-size: 2rem; /* reduced from your current value */
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -127,12 +127,11 @@ body, html {
 }
 
 /* ========== What We Do Section ========== */
-/* ========== What We Do Section ========== */
 .what-we-do {
   background-color: white;
   text-align: center;
   padding: 4rem 2rem;
-  font-family: 'Source Sans Pro', sans-serif; /* Ensure regular font is used */
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .what-we-do h2 {
@@ -161,7 +160,7 @@ body, html {
 .what-item {
   max-width: 250px;
   text-align: center;
-  transition: opacity 0.3s ease, transform 0.3s ease; /* smooth hover/fade support */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .what-item:hover {
@@ -190,14 +189,13 @@ body, html {
   margin-bottom: 0.5em;
   font-size: 5rem;
   color: #ff5e66;
-  transition: color 0.3s ease; /* smooth icon color change */
+  transition: color 0.3s ease;
 }
 
 .what-item:hover .icon {
-  color: grey; /* turns grey on hover */
+  color: grey;
 }
 
-/* Optional: Semantic Icon Classes (replace with real mappings) */
 .icon-sound::before {
   content: '\e90e';
 }
@@ -217,7 +215,7 @@ body, html {
 /* ========== Responsive Design ========== */
 @media (min-width: 768px) {
   .hero-content h1 {
-    font-size: 2 rem;
+    font-size: 2rem; /* FIXED: removed space between number and unit */
   }
 
   .hero-content p {
@@ -237,7 +235,7 @@ body, html {
 /* ========== Our Results Section ========== */
 .our-results {
   position: relative;
-  z-index: 30; /* above decorative shapes */
+  z-index: 30;
   background:
     linear-gradient(
       to right,
@@ -249,7 +247,7 @@ body, html {
   text-align: center;
   padding: 6rem 2rem;
   color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;/* Ensure regular font is used */
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .results-container { max-width: 980px; margin: 0 auto; }
@@ -262,7 +260,7 @@ body, html {
 }
 
 .results-text {
-  font-family:'source-sans-pro', sans-serif; /* keep your regular font */ 
+  font-family:'source-sans-pro', sans-serif; 
   font-size: 0.75rem;
   line-height: 1.5;
   text-align: center;
@@ -271,49 +269,45 @@ body, html {
   color: rgba(255,255,255,0.95);
 }
 
-/* layout */
 .results-stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 80px; /* adjust until it matches */
+  gap: 80px;
   align-items: center;
 }
 
-/* pentagon card — fluid scaling and robust background handling */
 .result-card {
-  --card-size: 120px; /* change to match the image size */
+  --card-size: 120px;
   width: var(--card-size);
   height: var(--card-size);
   position: relative;
   display: inline-block;
-  background-image: url('images/pentagone.png'); /* ensure this file exists */
+  background-image: url('images/pentagone.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% auto;
   font-family: 'Spin Cycle OT', sans-serif;
-  transition: transform 0.3s ease; /* smooth hover scale */
+  transition: transform 0.3s ease;
 }
 
 .result-card:hover {
   transform: scale(1.05);
 }
 
-/* text centering tuned to the pentagon's optical center */
 .result-number,
 .result-label {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%); /* center with both axes */
+  transform: translate(-50%, -50%);
   text-align: center;
   color: #fff;
   text-shadow: 0 2px 6px rgba(0,0,0,0.45);
   pointer-events: none;
 }
 
-/* optical centering values — tweak +/-2% if your PNG inner area differs */
 .result-number {
-  top: 46%; /* lowered for optical center of pentagon */
+  top: 46%;
   font-size: calc(0.20 * var(--card-size));
   font-weight: 700;
   line-height: 1;
@@ -330,10 +324,8 @@ body, html {
   white-space: normal;
 }
 
-/* small visual tweak for hover */
 .result-card:hover .result-number { transform: translate(-50%, -52%); }
 
-/* responsive spacing */
 @media (max-width: 768px) {
   .our-results { padding: 3.5rem 1rem; }
   .results-text { margin-bottom: 2rem; }
@@ -343,7 +335,6 @@ body, html {
 }
 
 /* ========== Contact Section ========== */
-/* Contact Section */
 .contact-section {
   display: flex;
   justify-content: center;
@@ -353,7 +344,6 @@ body, html {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -362,7 +352,6 @@ body, html {
   text-align: center;
 }
 
-/* Heading */
 .contact-form h4 {
   font-size: 1.8rem;
   font-weight: 600;
@@ -370,7 +359,6 @@ body, html {
   color: #333;
 }
 
-/* Inputs & Textarea */
 .contact-form input,
 .contact-form textarea {
   border: none;
@@ -383,14 +371,12 @@ body, html {
   transition: all 0.3s ease;
 }
 
-/* Focus effect */
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-bottom: 1px solid #ff6666;
   transform: translateY(-2px);
 }
 
-/* Button */
 .contact-form button {
   background: #ff6666;
   color: white;
@@ -406,14 +392,14 @@ body, html {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover effect */
 .contact-form button:hover {
   background: #ff4d4d;
   transform: scale(1.05);
 }
+
 /* ========== Footer ========== */
 .footer {
-  background-color: #06182c; /* dark navy */
+  background-color: #06182c;
   color: white;
   display: flex;
   flex-direction: column;
@@ -421,7 +407,6 @@ body, html {
   align-items: center;
   gap: 6rem;
   padding: 4rem 8rem;
-  
 }
 
 .footer-top {
@@ -469,9 +454,10 @@ body, html {
   background: #ff4d4d;
   color: white;
 }
+
 /* ========== Menu Toggle for Mobile ========== */
 .menu-toggle {
-  display: none; /* hidden by default */
+  display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -487,7 +473,16 @@ body, html {
 
 /* Mobile Styles */
 @media (max-width: 480px) {
-  .menu-toggle { display: flex; } /* show hamburger on mobile */
+  .menu-toggle { display: flex; }
+
+  .navbar {
+    margin-right: 0; /* CHANGED */
+    padding: 0 1rem; /* CHANGED */
+  }
+
+  .logo {
+    margin-left: 0; /* CHANGED */
+  }
 
   .nav-links {
     display: none;
@@ -501,5 +496,22 @@ body, html {
   }
   .nav-links.show {
     display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem; /* CHANGED: smaller on mobile */
+  }
+  .what-we-do h2 {
+    font-size: 1.5rem; /* CHANGED: smaller on mobile */
+  }
+
+  .footer {
+    padding: 2rem 1rem; /* CHANGED */
+    gap: 2rem; /* CHANGED */
+  }
+  .footer-top {
+    flex-direction: column; /* CHANGED */
+    text-align: center; /* CHANGED */
+    gap: 1.5rem; /* CHANGED */
   }
 }
