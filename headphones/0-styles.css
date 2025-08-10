@@ -8,7 +8,8 @@
 
 @font-face {
   font-family: 'Spin Cycle OT';
-  src: url('fonts/SpinCycle3dOT.otf' 'SpinCycleOT.otf') format('opentype');
+  src: url('fonts/SpinCycle3dOT.otf') format('opentype'),
+       url('fonts/SpinCycleOT.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -33,7 +34,7 @@ body, html {
       rgba(0, 0, 0, 0.6)
     ), 
     url('images/headphones_hero_1.jpg') center/cover no-repeat;
-  height: 100vh;
+  min-height: 100vh; /* changed from height to avoid mobile viewport issues */
   color: white;
   display: flex;
   flex-direction: column;
@@ -60,7 +61,7 @@ body, html {
 }
 
 .logo span {
-  font-family: 'Spin Cycle 3d OT';
+  font-family: 'Spin Cycle OT';
   font-size: 1rem;
   color: white;
   font-weight: normal;
@@ -88,7 +89,7 @@ body, html {
 }
 
 .hero-content h1 {
-  font-size: 2rem;
+  font-size: 2em; /* reduced from your current value */;
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -115,10 +116,10 @@ body, html {
   background-color: #e04e58;
 }
 
-/* ========== Responsive Design ========== */
+/* ========== Tablet and Up ========== */
 @media (min-width: 768px) {
   .hero-content h1 {
-    font-size: 2.0rem;
+    font-size: 2rem;
   }
 
   .hero-content p {
@@ -128,5 +129,42 @@ body, html {
   .cta-button {
     font-size: 0.8rem;
     padding: 1rem 2.5rem;
+  }
+}
+
+/* ========== Mobile ========== */
+@media (max-width: 480px) {
+  .navbar {
+    margin-right: 0;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .logo img {
+    width: 120px;
+  }
+
+  .hero {
+    padding: 1rem;
+  }
+
+  .hero-content {
+    padding-top: 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    font-size: 0.75rem;
   }
 }

@@ -86,6 +86,9 @@ body, html {
   font-weight: 500;
   font-size: 0.8rem;
 }
+.nav-links a:hover {
+  color: #e04e58;
+}
 
 /* ========== Hero Content ========== */
 .hero-content {
@@ -96,7 +99,7 @@ body, html {
 }
 
 .hero-content h1 {
-  font-size: 2rem;
+  font-size: 2rem; /* reduced from your current value */
   font-weight: bold;
   margin-bottom: 1rem;
 }
@@ -470,4 +473,64 @@ body, html {
 .footer-right a:hover {
   background: #ff4d4d;
   color: white;
+}
+/* ========== Menu Toggle for Mobile ========== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+  .menu-toggle { display: flex; }
+
+  .navbar {
+    margin-right: 0; /* CHANGED */
+    padding: 0 1rem; /* CHANGED */
+  }
+
+  .logo {
+    margin-left: 0; /* CHANGED */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(14,26,43,0.95);
+    width: 100%;
+    padding: 1rem 0;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hero-content h1 {
+    font-size: 1.5rem; /* CHANGED: smaller on mobile */
+  }
+  .what-we-do h2 {
+    font-size: 1.5rem; /* CHANGED: smaller on mobile */
+  }
+
+  .footer {
+    padding: 2rem 1rem; /* CHANGED */
+    gap: 2rem; /* CHANGED */
+  }
+  .footer-top {
+    flex-direction: column; /* CHANGED */
+    text-align: center; /* CHANGED */
+    gap: 1.5rem; /* CHANGED */
+  }
 }

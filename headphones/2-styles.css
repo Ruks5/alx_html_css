@@ -2,15 +2,11 @@
 @font-face {
   font-family: 'Source Sans Pro';
   src: url('fonts/SourceSansPro-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
   font-family: 'Spin Cycle OT';
   src: url('fonts/SpinCycle3dOT.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 @font-face {
@@ -20,8 +16,6 @@
        url('icons/holberton_school-icon.woff') format('woff'),
        url('icons/holberton_school-icon.ttf') format('truetype'),
        url('icons/holberton_school-icon.svg#HolbertonSchoolIcon') format('svg');
-  font-weight: normal;
-  font-style: normal;
 }
 
 /* ========== Reset & Base Styles ========== */
@@ -34,44 +28,38 @@
 body, html {
   height: 100%;
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #000; /* fallback background */
+  background-color: #000;
 }
 
 /* ========== Hero Section ========== */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
               url('images/headphones_hero_1.jpg') center/cover no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 /* ========== Navbar ========== */
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin-right: 150px;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
-.logo {
-  margin-left: 150px;
+  align-items: center;
+  padding: 0 1.5rem;
 }
 
 .logo img {
-  width: 150px;
-  height: auto;
+  width: 140px;
 }
 
 .logo span {
   font-family: 'Spin Cycle OT';
   font-size: 1rem;
   color: white;
-  font-weight: normal;
 }
 
 .nav-links {
@@ -84,25 +72,62 @@ body, html {
   color: white;
   text-decoration: none;
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+}
+.nav-links a:hover {
+  color: #e04e58;
+}
+/* ========== Mobile Menu Toggle ========== */
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hide menu by default on mobile */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: rgba(0,0,0,0.9);
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    width: 200px;
+    text-align: right;
+  }
+
+  .menu-toggle:checked + .menu-icon + .nav-links {
+    display: flex;
+  }
 }
 
 /* ========== Hero Content ========== */
 .hero-content {
   max-width: 700px;
   margin: auto;
-  text-align: center;
-  padding-top: 6rem;
+  padding-top: 4rem;
 }
 
 .hero-content h1 {
-  font-size: 2rem;
+  font-size: 2em; /* reduced from your current value */;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   margin-bottom: 2rem;
 }
 
@@ -110,10 +135,10 @@ body, html {
   background-color: #ff5e66;
   color: white;
   text-transform: uppercase;
+  text-decoration: none;
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 999px;
-  text-decoration: none;
   font-weight: bold;
   font-size: 0.9rem;
   transition: background-color 0.3s ease;
@@ -128,7 +153,6 @@ body, html {
   background-color: white;
   text-align: center;
   padding: 4rem 2rem;
-  font-family: 'Source Sans Pro', sans-serif; /* Ensure regular font is used */
 }
 
 .what-we-do h2 {
@@ -139,10 +163,9 @@ body, html {
 
 .what-we-do p {
   max-width: 600px;
-  margin: 0 auto 5rem;
-  font-size: 0.9rem;
+  margin: 0 auto 3rem;
+  font-size: 0.95rem;
   color: #333;
-  line-height: 1.5;
 }
 
 .what-we-do-grid {
@@ -150,175 +173,98 @@ body, html {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  max-width: 1000px;
-  margin: 0 auto;
 }
 
 .what-item {
   max-width: 250px;
-  text-align: center;
 }
 
-.what-item h3 {
-  margin: 1rem 0 0.5rem;
-  font-size: 1.2rem;
-  color: #222;
-}
-
-.what-item p {
-  font-size: 0.85rem;
-  color: #555;
-}
-
-/* ========== Icon Styling ========== */
 .icon {
   font-family: 'HolbertonSchoolIcon';
-  font-style: normal;
-  font-weight: normal;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-bottom: 0.5em;
-  font-size: 5rem;
+  font-size: 4rem;
   color: #ff5e66;
 }
 
-/* Optional: Semantic Icon Classes (replace with real mappings) */
-.icon-sound::before {
-  content: '\e90e';
-}
-
-.icon-clapper::before {
-  content: '\e910';
-}
-
-.icon-music::before {
-  content: '\e90d';
-}
-
-.icon-ear::before {
-  content: '\e909';
-}
-/* ========== Responsive Design ========== */
-@media (min-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    font-size: 1rem;
-    padding: 1rem 2.5rem;
-  }
-
+/* Mobile: stack items */
+@media (max-width: 768px) {
   .what-item {
-    max-width: 200px;
+    max-width: 100%;
   }
 }
+
 /* ========== Our Results Section ========== */
 .our-results {
-  position: relative;
-  z-index: 30; /* above decorative shapes */
-  background:
-    linear-gradient(
-      to right,
-      rgba(14,26,43,0.85) 0%,
-      rgba(14,26,43,0.6) 50%,
-      rgba(14,26,43,0.3) 100%
-    ),
-    url('images/headphones_hero_2.jpg') center/cover no-repeat;
+  background: linear-gradient(to right, rgba(14,26,43,0.85), rgba(14,26,43,0.3)),
+              url('images/headphones_hero_2.jpg') center/cover no-repeat;
   text-align: center;
   padding: 6rem 2rem;
   color: #fff;
-  font-family: 'Source Sans Pro', sans-serif;/* Ensure regular font is used */
 }
 
-.results-container { max-width: 980px; margin: 0 auto; }
- 
+.results-container {
+  max-width: 980px;
+  margin: 0 auto;
+}
 
 .results-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #fff;
-  font-weight: bold;
-}
-.results-text {
-  font-family:'source-sans-pro', sans-serif; /* keep your regular font */ 
-  font-size: 0.75rem;
-  line-height: 1.5;
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto 3rem;
-  color: rgba(255,255,255,0.95);
 }
 
-/* layout */
+.results-text {
+  font-size: 0.85rem;
+  max-width: 500px;
+  margin: 0 auto 3rem;
+}
+
 .results-stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 80px; /* adjust until it matches */
-  align-items: center;
+  gap: 2rem;
 }
 
-/* pentagon card — fluid scaling and robust background handling */
 .result-card {
-  --card-size: 120px; /* change to match the image size */
+  --card-size: clamp(80px, 20vw, 120px);
   width: var(--card-size);
   height: var(--card-size);
-  position: relative;
-  display: inline-block;
-  background-image: url('images/pentagone.png'); /* ensure this file exists */
-  background-repeat: no-repeat;
-  background-position: center;
-  /* background-size tuned so pentagon fills most of the box but leaves inner area for text */
+  background-image: url('images/pentagone.png');
   background-size: 100% auto;
-  font-family: 'Spin Cycle OT', sans-serif;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-/* text centering tuned to the pentagon's optical center */
 .result-number,
 .result-label {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%); /* center with both axes */
+  transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.45);
-  pointer-events: none;
 }
 
-/* optical centering values — tweak +/-2% if your PNG inner area differs */
 .result-number {
-  top: 46%; /* lowered for optical center of pentagon */
-  font-size: calc(0.20 * var(--card-size));
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: 0.5px;
+  top: 45%;
+  font-size: calc(0.2 * var(--card-size));
+  font-weight: bold;
 }
 
 .result-label {
   top: 68%;
   font-size: calc(0.06 * var(--card-size));
-  line-height: 1.2;
-  max-width: 78%;
-  font-family: 'Source Sans Pro', sans-serif;
-  text-transform: none;
-  white-space: normal;
 }
 
-/* small visual tweak for hover */
-.result-card:hover .result-number { transform: translate(-50%, -52%); }
+/* Adjust for smaller devices */
+@media (max-width: 480px) {
+  .hero {
+    padding: 1rem;
+  }
 
-/* responsive spacing */
-@media (max-width: 768px) {
-  .our-results { padding: 3.5rem 1rem; }
-  .results-text { margin-bottom: 2rem; }
-  /* keep fluid sizing but a slightly smaller max */
-  .result-card { --card-size: clamp(64px, 14vw, 110px); background-size: 86% auto; }
-  .result-number { top: 44%; }
-  .result-label { top: 67%; font-size: calc(0.13 * var(--card-size)); }
+  .cta-button {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .results-stats {
+    gap: 1rem;
+  }
 }
